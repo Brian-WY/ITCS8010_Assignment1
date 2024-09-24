@@ -73,7 +73,7 @@ def train_resnext(model, train_loader, val_loader, num_epochs, device, lr=5e-5, 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=decay)
 
-    for epoch in tqdm.tqdm(range(num_epochs), desc="Training"):
+    for epoch in range(num_epochs):
         model.train()
         train_loss = 0.0
         for batch in train_loader:
@@ -156,14 +156,10 @@ def print_trainable_parameters(model):
     Print the number of trainable parameters in the model.
     """
     trainable_params = 0
-    all_param = 0
     for _, param in model.named_parameters():
-        all_param += param.numel()
         if param.requires_grad:
             trainable_params += param.numel()
-    print(
-        f"trainable params: {trainable_params}"
-    )
+    print(f"trainable params: {trainable_params}")
 
 
 if __name__ == '__main__':
@@ -198,10 +194,8 @@ if __name__ == '__main__':
         eval_model(model, test_loader, device)
 
     if isResNext:
-        model, transforms = get_resnext_model(num_classes=num_classes)
-        train_loader, val_loader, test_loader, class_names = load_dataset(
-            data_path, transforms, 0.1, 32  # Use transforms from timm
-        )
+        model, image_processor = get_resnext_model(num_classes=num_classes)
+        train_loader, val_loader, test_loader, class_names = load_dataset(data_path, image_processor, 0.1, 32)
         model.load_state_dict(torch.load('output/resnext_model.pth'))
         model.to(device)
         eval_model_2(model, test_loader, device)
