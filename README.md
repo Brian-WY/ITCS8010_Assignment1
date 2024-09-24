@@ -26,10 +26,11 @@ Ensure you have the following installed:
 - random
 - tqdm
 - timm
+- matplotlib
 
 You can install the necessary libraries using the following command:
 ```bash
-pip install torch torchvision transformers datasets numpy random tqdm timm
+pip install torch torchvision transformers datasets numpy random tqdm timm matplotlib
 ```
 Ensure you have put the train and test folder of the images under data directory.
 
