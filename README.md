@@ -13,9 +13,14 @@ This project implements image classification using a Resnet-50 model pretrained 
 - `model/`
   - `models.py` - Contains the definition of the pretrained models and corresponding modifications.
 - `output/`
+  - `resnet50_tuned.pth` - The trained resnet-50 model with best accuracy
+  - `resnext_model.pth` - The trained resnext-50 model by efficient training method with a good performence
 
 ## Prerequisites
-
+To deploy the code:
+```bash
+git clone https://github.com/Brian-WY/ITCS8010_Assignment1.git
+```
 Ensure you have the following installed:
 - Python 3.10 or higher
 - PyTorch
