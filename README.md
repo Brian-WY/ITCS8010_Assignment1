@@ -12,6 +12,7 @@ This project implements image classification using a Resnet-50 model pretrained 
   - `dataloader.py` - Module to load and preprocess data.
 - `model/`
   - `models.py` - Contains the definition of the pretrained models and corresponding modifications.
+- `output/`
 
 ## Prerequisites
 
@@ -21,12 +22,14 @@ Ensure you have the following installed:
 - transformers
 - torchvision
 - datasets
-- PIL
 - numpy
+- random
+- tqdm
+- timm
 
 You can install the necessary libraries using the following command:
 ```bash
-pip install torch torchvision transformers datasets pillow numpy
+pip install torch torchvision transformers datasets numpy random tqdm timm
 ```
 Ensure you have put the train and test folder of the images under data directory.
 
