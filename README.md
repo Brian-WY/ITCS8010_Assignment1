@@ -28,6 +28,7 @@ You can install the necessary libraries using the following command:
 ```bash
 pip install torch torchvision transformers datasets pillow numpy
 ```
+Ensure you have put the train and test folder of the images under data directory.
 
 ## For Inference
 Ensure you're under the same directory as main.py
