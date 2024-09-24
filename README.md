@@ -17,7 +17,7 @@ This project implements image classification using a Resnet-50 model pretrained 
   - `resnext_model.pth` - The trained resnext-50 model by efficient training method with a good performence
 
 ## Prerequisites
-To deploy the code:
+To use the project:
 ```bash
 git clone https://github.com/Brian-WY/ITCS8010_Assignment1.git
 ```
